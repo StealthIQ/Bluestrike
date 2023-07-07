@@ -1,0 +1,5 @@
+*.ini
+*.sh
+*_
+bluetooth-pentest-draft.py
+blue-method-2.py
