@@ -1,21 +1,21 @@
 import subprocess
 import multiprocessing
 import time
-import configparser
+import os
+from dotenv import load_dotenv
 from rich import print
 from rich.console import Console
 from utils.macaddress_gen import generate_mac_address
+# from macaddress_gen import generate_mac_address
+
+load_dotenv()
+TARGET_DEVICE_MAC = os.getenv('TARGET_DEVICE_MAC')
+interface = os.getenv('INTERFACES')
 
 console = Console()
 max_threads = 10
 
 threads_count = min(multiprocessing.cpu_count(), max_threads)
-
-# [ Creates a new configuration ]
-config = configparser.ConfigParser()
-config.read('devices.ini')
-TARGET_DEVICE_MAC = config.get('DEVICE_MAC', 'AIRPODS')
-interface = config.get('INTERFACES', 'ONE')
 
 # [ OUI Numbers for Mac Address ]
 SPOOFED_MACS = [

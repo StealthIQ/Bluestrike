@@ -1,0 +1,4 @@
+rich
+fade
+bleak
+python-dotenv
