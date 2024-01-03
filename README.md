@@ -1,3 +1,4 @@
+paru -Sy --noconfirm --needed bluez bluez-utils
 # Bluestrike
 
 - Opensource python tool for jamming bluetooth signals (in the making)
